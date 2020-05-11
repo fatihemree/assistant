@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -58,8 +59,15 @@ class MyApp extends StatelessWidget {
         ),
       );
 
+
   Widget get loginInputUser => TextField(
       onChanged: (val) {},
       textAlign: TextAlign.left,
-      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600));
+      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+      decoration: InputDecoration(
+        labelText: "Mail Adresinizi Giriniz"
+      ),
+      );
+      
+      
 }

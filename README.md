@@ -1,26 +1,16 @@
-# World of Tanks Blitz Assistant
+# assistant
 
-## Paketler ve Özellikleri
+A new Flutter project.
 
-### logger
-[Looger Link](https://https://pub.dev/packages/logger)
+## Getting Started
 
-> Debug console daha renkli ve belirgin hale getiren bir pakettir.
+This project is a starting point for a Flutter application.
 
-### splash
-[splash Link](https://https://pub.dev/packages/custom_splash#-installing-tab-)
+A few resources to get you started if this is your first Flutter project:
 
-> Açılış ekranı için kullanılan bir paket türüdür.
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-
-
-## Sayfalar
-
-### Açılış Ekranı
-
-#### Yapılacaklar
-- Backgroud image her telefona uygun olacak şekilde göm
-- Hem login ekranı için hemde açılış ekranına uygun logo seçimi
-- Splash yöntemini incele
-
-
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
