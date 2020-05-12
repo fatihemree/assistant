@@ -12,6 +12,13 @@
 
 > Açılış ekranı için kullanılan bir paket türüdür.
 
+### Device Simulator
+
+> Farklı ekranlara göre uyum sağlamasını sağlar.
+
+[deviceSmilatör](https://pub.dev/packages/device_simulator);
+[mediumDoc](https://medium.com/flutter-community/building-flutter-apps-for-multiple-screen-sizes-and-devices-5ec7f86df96e);
+
 
 
 ## Sayfalar
