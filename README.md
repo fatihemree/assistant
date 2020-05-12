@@ -18,8 +18,8 @@
 > Debug console daha renkli ve belirgin hale getiren bir pakettir.
 
 ### splash
-[splash Link](https://pub.dev/packages/custom_splash#-installing-tab-)
-
+[splash Link](https://pub.dev/packages/custom_splash#-installing-tab-)2*.şü
+ 
 > Açılış ekranı için kullanılan bir paket türüdür.
 
 ### Device Simulator
@@ -51,4 +51,4 @@
 
 #### TextField Hakkında
 
-[medium Kaynka](https://medium.com/flutter-community/a-deep-dive-into-flutter-textfields-f0e676aaab7a)
+[medium Kaynak](https://medium.com/flutter-community/a-deep-dive-into-flutter-textfields-f0e676aaab7a);
