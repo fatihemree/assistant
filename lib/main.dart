@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -26,12 +25,15 @@ class MyApp extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           logo,
+          form
         ],
       );
-  Widget get logo => Image.asset(
-        'assets/img/logo.png',
-        width: 250,
-        fit: BoxFit.cover,
+  Widget get logo => Center(
+        child: Image.asset(
+          'assets/img/logo.png',
+          width: 250,
+          fit: BoxFit.cover,
+        ),
       );
 
   BoxDecoration conStyle = BoxDecoration(
@@ -59,15 +61,21 @@ class MyApp extends StatelessWidget {
         ),
       );
 
+  Widget get form => Container(
+        width: 300,
+        decoration: formStyle,
+        child: Column(
+          children: <Widget>[loginInputUser, loginInputUser],
+        ),
+      );
+
+  BoxDecoration formStyle = BoxDecoration();
 
   Widget get loginInputUser => TextField(
-      onChanged: (val) {},
-      textAlign: TextAlign.left,
-      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-      decoration: InputDecoration(
-        labelText: "Mail Adresinizi Giriniz"
-      ),
+        onChanged: (val) {},
+        textAlign: TextAlign.left,
+        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600,height: 1),
+        decoration: InputDecoration(labelText: "Mail Adresinizi Giriniz",
+        fillColor: Colors.white),
       );
-      
-      
 }
