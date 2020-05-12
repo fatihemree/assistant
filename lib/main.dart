@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'WoTAssistant',
       home: Scaffold(
+        resizeToAvoidBottomPadding: true,
         body: Center(
           child: Container(
             decoration: conStyle,
@@ -20,14 +21,14 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  Widget get content => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          logo,
-          form
-        ],
-      );
+  Widget get content => Padding(
+    padding: const EdgeInsets.only(bottom: 35),
+    child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[logo, form],
+        ),
+  );
   Widget get logo => Center(
         child: Image.asset(
           'assets/img/logo.png',
@@ -61,21 +62,52 @@ class MyApp extends StatelessWidget {
         ),
       );
 
-  Widget get form => Container(
-        width: 300,
-        decoration: formStyle,
-        child: Column(
-          children: <Widget>[loginInputUser, loginInputUser],
+  Widget get form => Center(
+        child: Container(
+          width: 300,
+          decoration: formStyle,
+          child: Column(
+            children: <Widget>[loginInputUser, passwordInputUser],
+          ),
         ),
       );
 
   BoxDecoration formStyle = BoxDecoration();
 
-  Widget get loginInputUser => TextField(
-        onChanged: (val) {},
-        textAlign: TextAlign.left,
-        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600,height: 1),
-        decoration: InputDecoration(labelText: "Mail Adresinizi Giriniz",
-        fillColor: Colors.white),
+  Widget get loginInputUser => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextField(
+          onChanged: (val) {},
+          textAlign: TextAlign.left,
+          style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              height: 1,
+              color: Colors.white),
+          decoration: InputDecoration(
+              hintText: "WarGamin.net ID'niz",
+              hintStyle: TextStyle(color: Colors.white),
+              labelText: "Mail Adresinizi Giriniz",
+              fillColor: Color(0xFF37372D),
+              filled: true),
+        ),
+      );
+
+  Widget get passwordInputUser => Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextField(
+          obscureText: true,
+          onChanged: (val) {},
+          textAlign: TextAlign.left,
+          style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              height: 1,
+              color: Colors.white),
+          decoration: InputDecoration(
+              labelText: "Şifrenizi Giriniz",
+              fillColor: Color(0xFF37372D),
+              filled: true),
+        ),
       );
 }
