@@ -1,4 +1,4 @@
-# World of Tanks Blitz Assistant
+# assistant
 
 ## Vs Code Paketleri
 
@@ -11,12 +11,6 @@
 [VsCodePackage](https://marketplace.visualstudio.com/items?itemName=marcelovelasquez.flutter-tree);
 
 ## Paketler ve Özellikleri
-
-### logger
-[Looger Link](https://https://pub.dev/packages/logger)
-
-> Debug console daha renkli ve belirgin hale getiren bir pakettir.
-
 ### splash
 [splash Link](https://pub.dev/packages/custom_splash#-installing-tab-)2*.şü
  
@@ -30,9 +24,6 @@
 [mediumDoc](https://medium.com/flutter-community/building-flutter-apps-for-multiple-screen-sizes-and-devices-5ec7f86df96e);
 
 ### webview flutter
-
-[packageLink](https://pub.dev/packages/webview_flutter#-changelog-tab-link);
-
 
 
 ## Sayfalar
