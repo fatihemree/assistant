@@ -1,5 +1,15 @@
 # World of Tanks Blitz Assistant
 
+## Vs Code Paketleri
+
+### PasteJson
+
+[VsCodePackage](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype);
+
+### FlutterTree
+
+[VsCodePackage](https://marketplace.visualstudio.com/items?itemName=marcelovelasquez.flutter-tree);
+
 ## Paketler ve Özellikleri
 
 ### logger
@@ -18,6 +28,10 @@
 
 [deviceSmilatör](https://pub.dev/packages/device_simulator);
 [mediumDoc](https://medium.com/flutter-community/building-flutter-apps-for-multiple-screen-sizes-and-devices-5ec7f86df96e);
+
+### webview flutter
+
+[packageLink](https://pub.dev/packages/webview_flutter#-changelog-tab-link);
 
 
 
