@@ -1,29 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import "package:assistant/logger.dart";
+import 'package:assistant/ui/widgets/bottomSheet.dart';
+// import "package:assistant/logger.dart";
 
 class LoginScreenPage extends StatefulWidget {
   LoginScreenPage({Key key}) : super(key: key);
-
   @override
   _LoginScreenPageState createState() => _LoginScreenPageState();
 }
 
 class _LoginScreenPageState extends State<LoginScreenPage> {
   bool rememberBool = false;
+//  var dropdownValue="";
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          topBarButton,
-          content
-        ],
+    return Stack(children: [
+      Container(
+        decoration: conStyle,
       ),
-    );
+      Expanded(child: loginGrid)
+    ]);
   }
 
+  BoxDecoration conStyle = BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage("assets/img/bg.png"),
+      fit: BoxFit.cover,
+    ),
+  );
+
 // Colors hexCode
+  Widget get loginGrid => Container(
+        child: Column(
+          children: [topBarButton, content],
+        ),
+      );
 
   Widget get content => Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -73,6 +85,7 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
           width: 300,
           child: Column(
             children: <Widget>[
+              BottomSheetMenu(),
               loginInputUser,
               loginInputPassword,
               loginInputRemember,
@@ -173,7 +186,7 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
           child: Text("Şifrenizimi mi unuttunuz?", style: loginLink),
         )
       ]);
-}
+  TextStyle loginLink = TextStyle(
+      fontSize: 18, color: Hexcolor('#919284'), fontWeight: FontWeight.w500);
 
-TextStyle loginLink =
-    TextStyle(fontSize: 18, color: Hexcolor('#919284'), fontWeight: FontWeight.w500);
+}
