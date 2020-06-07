@@ -32,57 +32,65 @@ class _PopAlertState extends State<InfoLoginAlert> {
         // return object of type Dialog
         return AlertDialog(
           backgroundColor: Hexcolor('#37372D'),
-          content: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                infoAlertList(
-                  Icons.alternate_email,
-                  "Eposta",
-                  "Bu uygulama Xbox ve Ps4 kullanıcılarının hesaplarını desteklemiyor.",
-                ),
-                infoAlertList(
-                  Icons.save,
-                  "Beni Hatırla",
-                  "Bu özellik hesabınızın güvenliğini azaltır. Lütfen ikili doğrulama faktörünü aktif ediniz.",
-                ),
-                infoAlertList(
-                  Icons.warning,
-                  "Wargaming.net ID'niz",
-                  "Hesabınızı etkinleştirmeniz gerekiyor",
-                )
-              ],
-            ),
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              infoAlertList(
+                Icons.alternate_email,
+                "Eposta",
+                "Bu uygulama Xbox ve Ps4 kullanıcılarının hesaplarını desteklemiyor.",
+              ),
+              infoAlertList(
+                Icons.save,
+                "Beni Hatırla",
+                "Bu özellik hesabınızın güvenliğini azaltır. Lütfen ikili doğrulama faktörünü aktif ediniz.",
+              ),
+              infoAlertList(
+                Icons.warning,
+                "Wargaming.net ID'niz",
+                "Hesabınızı etkinleştirmeniz gerekiyor",
+              )
+            ],
           ),
         );
       },
     );
   }
 
-  Widget infoAlertList(infoIcons, infoTitle, infoContent) => Container(
-        child: Column(
+  Widget infoAlertList(infoIcons, infoTitle, infoContent) => Padding(
+    padding: const EdgeInsets.only(bottom: 10,top:10),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
           children: [
-            Row(children: [
-              Icon(
+            Padding(
+              padding: const EdgeInsets.only(right: 5),
+              child: Icon(
                 infoIcons,
                 color: Hexcolor('#E2642A'),
               ),
-              Text(infoTitle,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                  )),
-            ]),
-            Text(
-              infoContent,
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 15
-              ),
-            )
+            ),
+            Text(infoTitle,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                )),
           ],
         ),
-      );
+        Padding(
+          padding: const EdgeInsets.only(top:5),
+          child: Text(
+            infoContent,
+            style: TextStyle(color: Colors.white70, fontSize: 14),
+          ),
+        )
+      ],
+    ),
+  );
 }
