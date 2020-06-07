@@ -1,9 +1,10 @@
+import 'package:assistant/logger.dart';
+import 'package:assistant/ui/widgets/infoAlertButton.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:assistant/ui/widgets/bottomSheet.dart';
 import 'package:assistant/ui/widgets/input.dart';
 import 'package:assistant/ui/theme/themeData.dart';
-// import "package:assistant/logger.dart";
 
 class LoginScreenPage extends StatefulWidget {
   LoginScreenPage({Key key}) : super(key: key);
@@ -36,7 +37,7 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
 
   Widget get content => Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[logo, form],
         ),
@@ -53,29 +54,15 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
         padding: const EdgeInsets.only(top: 25, bottom: 50),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[sideBarButton, infoButton],
+          children: <Widget>[sideBarButton, InfoLoginAlert()],
         ),
       );
-
-// İnfo Buton
-  Widget get infoButton => FlatButton(
-      onPressed: null,
-      child: Icon(
-        Icons.info_outline,
-        size: 35,
-        color: Colors.white70,
-      ));
 
 // Sidebar buton
   Widget get sideBarButton => FlatButton(
       onPressed: null,
       child: Icon(Icons.menu, size: 35, color: Colors.white70));
 
-/*
-      *
-      * Form Control
-      *
-      */
 
   Widget get form => Container(
         width: 300,
@@ -91,40 +78,12 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
         ),
       );
 
-  Widget get loginInputPassword => Container(
-        decoration: BoxDecoration(
-          color: Hexcolor('#37372D'),
-        ),
-        child: TextField(
-          onChanged: (val) {},
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-            height: 1,
-            color: Colors.white,
-          ),
-          decoration: InputDecoration(
-            labelText: "Şifrenizi Giriniz",
-            labelStyle: TextStyle(color: Colors.white30),
-          ),
-        ),
-      );
-
   Widget get loginInputRemember => Row(
         children: [
-          Checkbox(
-              // materialTapTargetSize: MaterialTapTargetSize.padded,
-              // tristate: false,
-              activeColor: Hexcolor('#919284'),
-              focusColor: Hexcolor('#919284'),
-              hoverColor: Hexcolor('#919284'),
-              value: false,
-              tristate: false,
-              onChanged: (bool value) {}),
           Theme(
-              data: ThemeData(unselectedWidgetColor: Colors.red),
+              data: ThemeData(unselectedWidgetColor: Hexcolor("#E2642A")),
               child: Checkbox(
+                  focusColor: Hexcolor("#E2642A"),
                   value: rememberBool,
                   tristate: false,
                   onChanged: (bool value) {
@@ -136,7 +95,7 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
             "Beni Hatırla",
             style: TextStyle(
                 // color: Colors.white70,
-                color: Colors.white70,
+                color: Colors.white,
                 fontSize: 17,
                 fontWeight: FontWeight.w500),
           )
@@ -147,7 +106,10 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
         width: double.infinity,
         child: FlatButton(
           color: Hexcolor('#919284'),
-          child: Text("GİRİŞ YAP"),
+          child: Text(
+            "GİRİŞ YAP",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
           onPressed: () {
             print("Butona 1 Kez Tıklandı");
           },

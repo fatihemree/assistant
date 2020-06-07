@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:hexcolor/hexcolor.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class BottomSheetMenu extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _BottomSheetMenuState extends State<BottomSheetMenu> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(_selectedItem, style: buttonStyle),
-          Icon(Icons.arrow_drop_down, color: Colors.orange, size: 18)
+          Icon(Icons.arrow_drop_down, color: Hexcolor("#F7C15D"), size: 18)
         ],
       ),
       onTap: () => _onButtonPressed(),
@@ -24,7 +24,7 @@ class _BottomSheetMenuState extends State<BottomSheetMenu> {
   }
 
   TextStyle buttonStyle = TextStyle(
-      fontSize: 18, color: Colors.orange, fontWeight: FontWeight.w500);
+      fontSize: 18, color: Hexcolor("#F7C15D"), fontWeight: FontWeight.w500);
 
   void _onButtonPressed() {
     showModalBottomSheet(

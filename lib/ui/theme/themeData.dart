@@ -9,8 +9,18 @@ BoxDecoration conStyle = BoxDecoration(
 );
 
 TextStyle loginLink = TextStyle(
-  fontSize: 18,
-  color: Hexcolor('#919284'),
+  fontSize: 16,
+  color: Hexcolor('#E2642A'),
   fontWeight: FontWeight.w500,
 );
 
+
+/*
+*
+* infoAlertButtonStyle
+*
+*/
+
+BoxDecoration infoGridContainer = BoxDecoration(
+  color: Hexcolor('#37372D')
+);
