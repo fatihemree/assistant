@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+// import 'package:hexcolor/hexcolor.dart';
 
 class BottomSheetMenu extends StatefulWidget {
   @override
@@ -10,18 +10,16 @@ class _BottomSheetMenuState extends State<BottomSheetMenu> {
   String _selectedItem = 'BDT';
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      color: Colors.transparent,
-      child: Container(
-        width: 75,
-        child: Row(
-          children: [
-            Text(_selectedItem, style: buttonStyle),
-            Icon(Icons.arrow_drop_down, color: Colors.orange, size: 18)
-          ],
-        ),
+    return GestureDetector(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(_selectedItem, style: buttonStyle),
+          Icon(Icons.arrow_drop_down, color: Colors.orange, size: 18)
+        ],
       ),
-      onPressed: () => _onButtonPressed(),
+      onTap: () => _onButtonPressed(),
     );
   }
 

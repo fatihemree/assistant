@@ -15,6 +15,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         title: 'WoTAssistant',
         home: Scaffold(
-            resizeToAvoidBottomPadding: false, body: LoginScreenPage()));
+            resizeToAvoidBottomInset: true,
+            resizeToAvoidBottomPadding: false,
+            body: LoginScreenPage()));
   }
 }

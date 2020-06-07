@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:assistant/ui/widgets/bottomSheet.dart';
+import 'package:assistant/ui/widgets/input.dart';
+import 'package:assistant/ui/theme/themeData.dart';
 // import "package:assistant/logger.dart";
 
 class LoginScreenPage extends StatefulWidget {
@@ -23,32 +25,27 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
     ]);
   }
 
-  BoxDecoration conStyle = BoxDecoration(
-    image: DecorationImage(
-      image: AssetImage("assets/img/bg.png"),
-      fit: BoxFit.cover,
-    ),
-  );
-
 // Colors hexCode
-  Widget get loginGrid => Container(
+  Widget get loginGrid => SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [topBarButton, content],
+          ),
+        ),
+      );
+
+  Widget get content => Center(
         child: Column(
-          children: [topBarButton, content],
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[logo, form],
         ),
       );
 
-  Widget get content => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[logo, form],
-      );
-
-  Widget get logo => Center(
-        child: Image.asset(
-          'assets/img/logo.png',
-          width: 250,
-          fit: BoxFit.cover,
-        ),
+  Widget get logo => Image.asset(
+        'assets/img/logo.png',
+        width: 250,
+        fit: BoxFit.cover,
       );
 
 // tapbar kafesi
@@ -80,39 +77,17 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
       *
       */
 
-  Widget get form => Center(
-        child: Container(
-          width: 300,
-          child: Column(
-            children: <Widget>[
-              BottomSheetMenu(),
-              loginInputUser,
-              loginInputPassword,
-              loginInputRemember,
-              loginInputButton,
-              loginInputLink
-            ],
-          ),
-        ),
-      );
-
-  Widget get loginInputUser => Container(
-        decoration: BoxDecoration(
-          color: Hexcolor('#37372D'),
-        ),
-        child: TextField(
-          onChanged: (val) {},
-          textAlign: TextAlign.left,
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w600,
-            height: 1,
-            color: Colors.white,
-          ),
-          decoration: InputDecoration(
-            labelText: "Mail Adresinizi Giriniz",
-            labelStyle: TextStyle(color: Colors.white30),
-          ),
+  Widget get form => Container(
+        width: 300,
+        child: Column(
+          children: <Widget>[
+            BottomSheetMenu(),
+            InputLogin("Mail Adresinizi Giriniz"),
+            InputLogin("Şifrenizi Giriniz"),
+            loginInputRemember,
+            loginInputButton,
+            loginInputLink
+          ],
         ),
       );
 
@@ -141,18 +116,26 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
           Checkbox(
               // materialTapTargetSize: MaterialTapTargetSize.padded,
               // tristate: false,
-              activeColor: Colors.white38,
-              focusColor: Colors.white38,
-              hoverColor: Colors.white38,
-              value: rememberBool,
-              onChanged: (bool value) {
-                setState(() {
-                  rememberBool = value;
-                });
-              }),
+              activeColor: Hexcolor('#919284'),
+              focusColor: Hexcolor('#919284'),
+              hoverColor: Hexcolor('#919284'),
+              value: false,
+              tristate: false,
+              onChanged: (bool value) {}),
+          Theme(
+              data: ThemeData(unselectedWidgetColor: Colors.red),
+              child: Checkbox(
+                  value: rememberBool,
+                  tristate: false,
+                  onChanged: (bool value) {
+                    setState(() {
+                      rememberBool = value;
+                    });
+                  })),
           Text(
             "Beni Hatırla",
             style: TextStyle(
+                // color: Colors.white70,
                 color: Colors.white70,
                 fontSize: 17,
                 fontWeight: FontWeight.w500),
@@ -186,7 +169,4 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
           child: Text("Şifrenizimi mi unuttunuz?", style: loginLink),
         )
       ]);
-  TextStyle loginLink = TextStyle(
-      fontSize: 18, color: Hexcolor('#919284'), fontWeight: FontWeight.w500);
-
 }
