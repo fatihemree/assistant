@@ -1,4 +1,4 @@
-import 'package:assistant/logger.dart';
+// import 'package:assistant/logger.dart';
 import 'package:assistant/ui/widgets/infoAlertButton.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -50,19 +50,24 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
       );
 
 // tapbar kafesi
-  Widget get topBarButton => Padding(
+  /* Widget get topBarButton => Padding(
         padding: const EdgeInsets.only(top: 25, bottom: 50),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[sideBarButton, InfoLoginAlert()],
         ),
+      );  */
+
+  Widget get topBarButton => AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [InfoLoginAlert()],
       );
 
 // Sidebar buton
   Widget get sideBarButton => FlatButton(
       onPressed: null,
-      child: Icon(Icons.menu, size: 35, color: Colors.white70));
-
+      child: Icon(Icons.menu, color: Colors.white70));
 
   Widget get form => Container(
         width: 300,

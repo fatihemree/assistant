@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import 'package:assistant/ui/theme/themeData.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class InfoLoginAlert extends StatefulWidget {
@@ -19,7 +18,7 @@ class _PopAlertState extends State<InfoLoginAlert> {
         child: Icon(
           Icons.info_outline,
           size: 35,
-          color: Colors.white70,
+          color: Colors.white,
         ));
   }
 
@@ -60,37 +59,37 @@ class _PopAlertState extends State<InfoLoginAlert> {
   }
 
   Widget infoAlertList(infoIcons, infoTitle, infoContent) => Padding(
-    padding: const EdgeInsets.only(bottom: 10,top:10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Row(
+        padding: const EdgeInsets.only(bottom: 10, top: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 5),
-              child: Icon(
-                infoIcons,
-                color: Hexcolor('#E2642A'),
-              ),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: Icon(
+                    infoIcons,
+                    color: Hexcolor('#E2642A'),
+                  ),
+                ),
+                Text(infoTitle,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                    )),
+              ],
             ),
-            Text(infoTitle,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500,
-                )),
+            Padding(
+              padding: const EdgeInsets.only(top: 5),
+              child: Text(
+                infoContent,
+                style: TextStyle(color: Colors.white70, fontSize: 14),
+              ),
+            )
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top:5),
-          child: Text(
-            infoContent,
-            style: TextStyle(color: Colors.white70, fontSize: 14),
-          ),
-        )
-      ],
-    ),
-  );
+      );
 }

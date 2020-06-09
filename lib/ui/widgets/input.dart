@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class InputLogin extends StatefulWidget {
-  String labelText;
+  final String labelText;
 
   InputLogin(this.labelText);
 

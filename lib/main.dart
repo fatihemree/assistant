@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import "package:assistant/logger.dart";
 import 'package:assistant/screen/loginPage.dart';
+import 'package:assistant/screen/drawerMenu.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         title: 'WoTAssistant',
         home: Scaffold(
+          drawer: DrawerMenu(),
             resizeToAvoidBottomInset: true,
             resizeToAvoidBottomPadding: false,
             body: LoginScreenPage()));
