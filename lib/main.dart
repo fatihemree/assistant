@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 // import "package:assistant/logger.dart";
 import 'package:assistant/screen/loginPage.dart';
-import 'package:assistant/screen/drawerMenu.dart';
+import 'package:assistant/screen/home.dart';
+// import 'package:assistant/screen/drawerMenu.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'WoTAssistant',
-        home: Scaffold(
-          drawer: DrawerMenu(),
-            resizeToAvoidBottomInset: true,
-            resizeToAvoidBottomPadding: false,
-            body: LoginScreenPage()));
+      title: 'WoTAssistant',
+      initialRoute: '/home',
+      routes: {
+        '/': (context) => LoginScreenPage(),
+        '/home': (context) => Home(),
+      },
+    );
   }
 }

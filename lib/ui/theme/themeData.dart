@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+Color turuncu = Hexcolor('#E2642A');
+
+
 BoxDecoration conStyle = BoxDecoration(
   image: DecorationImage(
     image: AssetImage("assets/img/bg.png"),
@@ -14,13 +17,10 @@ TextStyle loginLink = TextStyle(
   fontWeight: FontWeight.w500,
 );
 
-
 /*
 *
 * infoAlertButtonStyle
 *
 */
 
-BoxDecoration infoGridContainer = BoxDecoration(
-  color: Hexcolor('#37372D')
-);
+BoxDecoration infoGridContainer = BoxDecoration(color: Hexcolor('#37372D'));

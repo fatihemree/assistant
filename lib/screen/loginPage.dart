@@ -5,6 +5,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:assistant/ui/widgets/bottomSheet.dart';
 import 'package:assistant/ui/widgets/input.dart';
 import 'package:assistant/ui/theme/themeData.dart';
+import 'drawerMenu.dart';
 
 class LoginScreenPage extends StatefulWidget {
   LoginScreenPage({Key key}) : super(key: key);
@@ -18,13 +19,19 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Container(
-        decoration: conStyle,
-      ),
-      Expanded(child: loginGrid)
-    ]);
+    return Scaffold(
+        drawer: DrawerMenu(),
+        resizeToAvoidBottomInset: true,
+        resizeToAvoidBottomPadding: false,
+        body: login());
   }
+
+  Widget login() => Stack(children: [
+        Container(
+          decoration: conStyle,
+        ),
+        Expanded(child: loginGrid)
+      ]);
 
 // Colors hexCode
   Widget get loginGrid => SingleChildScrollView(
@@ -66,8 +73,7 @@ class _LoginScreenPageState extends State<LoginScreenPage> {
 
 // Sidebar buton
   Widget get sideBarButton => FlatButton(
-      onPressed: null,
-      child: Icon(Icons.menu, color: Colors.white70));
+      onPressed: null, child: Icon(Icons.menu, color: Colors.white70));
 
   Widget get form => Container(
         width: 300,
