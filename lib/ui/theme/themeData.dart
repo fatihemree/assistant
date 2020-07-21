@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Color turuncu = Hexcolor('#E2642A');
+Color sari = Hexcolor('#F3C169');
+Color backgroundBody = Hexcolor('#2B2B23');
+Color backgroundlight = Hexcolor('#39392F');
+Color white = Hexcolor('#FAF6DD');
+Color textGrey = Hexcolor('#828374');
 
 
 BoxDecoration conStyle = BoxDecoration(
