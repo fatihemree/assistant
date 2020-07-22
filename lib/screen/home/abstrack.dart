@@ -23,7 +23,36 @@ class Abstrack extends StatelessWidget {
           children: [
             UserStatistic(),
             Award(),
+            loadingWidget("Araçlar"),
+            loadingWidget("Zaferler / Savaşlar"),
           ],
+        ),
+      );
+
+  Widget  loadingWidget(value) => Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+          children: [
+            awardHeader(value),
+            Padding(
+              padding: const EdgeInsets.only(top:15),
+              child: loading,
+            ),
+          ],
+        ),
+  );
+
+  Widget awardHeader(value) => Container(
+      alignment: Alignment.topLeft,
+      child: Text(value, style: awardHeaderStyle));
+  TextStyle awardHeaderStyle = TextStyle(color: white, fontSize: 18);
+
+  Widget get loading => SizedBox(
+        width: 120,
+        child: LinearProgressIndicator(
+          minHeight: 3,
+          backgroundColor: turuncu,
+          valueColor: AlwaysStoppedAnimation<Color>(turuncuDark),
         ),
       );
 }

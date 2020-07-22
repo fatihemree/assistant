@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Color turuncu = Hexcolor('#E2642A');
+Color turuncuDark = Hexcolor('#75140B');
 Color sari = Hexcolor('#F3C169');
 Color backgroundBody = Hexcolor('#2B2B23');
 Color backgroundlight = Hexcolor('#39392F');

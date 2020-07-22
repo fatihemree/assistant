@@ -26,10 +26,10 @@ class Award extends StatelessWidget {
   Widget get awardHeader => Container(
       alignment: Alignment.topLeft,
       child: Text("Değerli Ödüller", style: awardHeaderStyle));
-  TextStyle awardHeaderStyle = TextStyle(color: white, fontSize: 25);
+  TextStyle awardHeaderStyle = TextStyle(color: white, fontSize: 18);
 
   Widget get listAwardBadge => Container(
-        height: 140,
+        height: 120,
         width: double.infinity,
         child: Center(
           child: ListView.builder(
