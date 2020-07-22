@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WoTAssistant',
-      initialRoute: '/home',
+      initialRoute: '/',
       routes: {
-        '/': (context) => LoginScreenPage(),
-        '/home': (context) => Home(),
+        '/': (context) => Home(),
+        '/login': (context) => LoginScreenPage(),
       },
     );
   }

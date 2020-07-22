@@ -3,12 +3,13 @@ import 'dart:ui';
 import 'package:assistant/ui/theme/themeData.dart';
 import 'package:flutter/material.dart';
 
-class UserStatistic_Info extends StatelessWidget {
+// ignore: must_be_immutable
+class UserStatisticInfo extends StatelessWidget {
   String name;
   String value;
   CrossAxisAlignment align;
 
-  UserStatistic_Info({
+  UserStatisticInfo({
     this.name,
     this.value,
     this.align,

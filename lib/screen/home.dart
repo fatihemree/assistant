@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home/abstrack.dart';
 import '../ui/theme/themeData.dart';
+import 'drawerMenu.dart';
 
 class Home extends StatefulWidget {
   const Home({Key key}) : super(key: key);
@@ -20,8 +21,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: DrawerMenu(),
       backgroundColor: backgroundBody,
       appBar: AppBar(
+        
           backgroundColor: backgroundlight,
           elevation: 0,
           title: Text(

@@ -3,42 +3,50 @@ import '../HeaderText.dart';
 import '../../theme/themeData.dart';
 import './UserStatisticInfo.dart';
 
+// ignore: must_be_immutable
 class UserStatistic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return userStatistic;
+    return Column(
+      children: [
+        userStatistic,
+        Padding(
+          padding: const EdgeInsets.only(top: 12),
+          child: Container(
+            alignment: Alignment.centerRight,
+            child: HeaderText(title: "Tüm İstatistikler",iconItem:Icons.arrow_right)),
+        )
+      ],
+    );
   }
 
-  Widget get userStatistic => Padding(
-        padding: const EdgeInsets.all(14.0),
-        child: Container(
-          color: backgroundlight,
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: HeaderText(
-                    title: "Rastagele,Tank bölüğü",
-                  ),
-                ),
-                userStatistic_row(),
-                userStatistic_rowTwo(),
-                userStatistic_rowThree()
-              ],
+  Widget get userStatistic => Container(
+    color: backgroundlight,
+    child: Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.topLeft,
+            child: HeaderText(
+              title: "Rastagele,Tank bölüğü",
             ),
           ),
-        ),
-      );
+          userStatisticRow(),
+          userStatisticRowTwo(),
+          userStatisticRowThree()
+        ],
+      ),
+    ),
+  );
 
-  Widget userStatistic_row() => Padding(
+  Widget userStatisticRow() => Padding(
         padding: const EdgeInsets.only(top: 14),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            UserStatistic_Info(
+            UserStatisticInfo(
               name: "Savaşlar",
               value: "50",
               align: CrossAxisAlignment.start,
@@ -47,29 +55,29 @@ class UserStatistic extends StatelessWidget {
               "assets/img/clan.png",
               height: 75,
             ),
-            UserStatistic_Info(
+            UserStatisticInfo(
                 name: "Zaferler", value: "80", align: CrossAxisAlignment.end),
           ],
         ),
       );
 
-  Widget userStatistic_rowTwo() => Padding(
+  Widget userStatisticRowTwo() => Padding(
         padding: const EdgeInsets.only(top: 14),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            UserStatistic_Info(
+            UserStatisticInfo(
               name: "Ort. Hasar",
               value: "50",
               align: CrossAxisAlignment.start,
             ),
-            UserStatistic_Info(
+            UserStatisticInfo(
               name: "Kişisel Reyting",
               value: "2.229",
               align: CrossAxisAlignment.center,
             ),
-            UserStatistic_Info(
+            UserStatisticInfo(
                 name: "Ortalama\nDeneyim",
                 value: "244",
                 align: CrossAxisAlignment.end),
@@ -77,7 +85,7 @@ class UserStatistic extends StatelessWidget {
         ),
       );
 
-  Widget userStatistic_rowThree() => Padding(
+  Widget userStatisticRowThree() => Padding(
         padding: const EdgeInsets.only(top: 14),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,6 +113,7 @@ class UserStatistic extends StatelessWidget {
         ),
       );
 
+  // ignore: non_constant_identifier_names
   TextStyle userStatistic_info__bottomStyle =
       TextStyle(color: textGrey, fontSize: 13);
 }

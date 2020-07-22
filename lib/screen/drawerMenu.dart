@@ -107,6 +107,7 @@ class DrawerMenu extends StatelessWidget {
       );
 }
 
+// ignore: must_be_immutable
 class DrawerListItem extends StatelessWidget {
   String title;
   IconData icon;
