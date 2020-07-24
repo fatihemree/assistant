@@ -1,6 +1,7 @@
 import 'package:assistant/ui/widgets/HeaderText.dart';
 import 'package:flutter/material.dart';
 import '../../theme/themeData.dart';
+// ignore: unused_import
 import 'package:assistant/logger.dart';
 
 // ignore: must_be_immutable

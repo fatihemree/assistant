@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'home/abstrack.dart';
+import 'home/tanks.dart';
 import '../ui/theme/themeData.dart';
 import 'drawerMenu.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key key}) : super(key: key);
@@ -59,7 +61,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   Widget tabBarView(_tabController) => TabBarView(
         children: [
           Abstrack(),
-          Text("data2"),
+          Tanks(),
           Text("data3"),
         ],
         controller: _tabController,

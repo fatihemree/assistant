@@ -6,6 +6,7 @@ import '../../ui/widgets/HeaderText.dart';
 import '../../ui/widgets/home/userStatistic.dart';
 import '../../ui/widgets/home/award.dart';
 
+// ignore: must_be_immutable
 class Abstrack extends StatelessWidget {
   // const Abstrack({Key key}) : super(key: key);
 
