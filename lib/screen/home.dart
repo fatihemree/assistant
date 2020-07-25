@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home/abstrack.dart';
 import 'home/tanks.dart';
+import 'home/badges.dart';
 import '../ui/theme/themeData.dart';
 import 'drawerMenu.dart';
 
@@ -62,7 +63,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: [
           Abstrack(),
           Tanks(),
-          Text("data3"),
+          Badges(),
         ],
         controller: _tabController,
       );
