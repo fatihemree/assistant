@@ -26,6 +26,7 @@ dependencies:
   hexcolor: ^1.0.2
   logger: ^0.9.1
   http: ^0.12.2
+  sticky_headers: ^0.1.8+1
 
 dev_dependencies:
   flutter_test:
