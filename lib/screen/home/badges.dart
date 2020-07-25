@@ -6,36 +6,26 @@ class Badges extends StatelessWidget {
   final badgesImage =
       "http://glossary-eu-static.gcdn.co/icons/wotb/current/achievements/armorPiercer.png";
   final badgeName = "Kurşun";
+  final badgeDesc =
+      "bir savaştaki veya beş düşman aracı yok edin. \n sadece rastgele savaşlarda alınabilir";
 
   @override
   Widget build(BuildContext context) {
-    return gridView;
+    return gridView(context);
   }
 
-  Widget get gridView => GridView.count(
+  Widget gridView(context) => GridView.count(
         padding: const EdgeInsets.all(15),
         childAspectRatio: 120 / 160,
         crossAxisCount: 3,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        children: [
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-          cards,
-        ],
+        children: [modalBadges(context)],
+      );
+
+  Widget modalBadges(context) => InkWell(
+        child: cards,
+        onTap: () => _showDialog(context),
       );
 
   Widget get cards => Container(
@@ -61,5 +51,42 @@ class Badges extends StatelessWidget {
             ],
           ),
         ),
+      );
+
+  void _showDialog(context) {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          backgroundColor: backgroundlight,
+          content: modalContent(),
+        );
+      },
+    );
+  }
+
+  Widget modalContent() => Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.network(
+            badgesImage,
+            height: 80,
+          ),
+          Text(
+            "<<Cengaver>>",
+            style: TextStyle(color: white),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: Text(
+              badgeDesc,
+              style: TextStyle(color: textGrey, fontSize: 13),
+            ),
+          )
+        ],
       );
 }
