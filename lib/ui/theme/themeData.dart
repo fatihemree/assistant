@@ -8,6 +8,8 @@ Color backgroundBody = Hexcolor('#2B2B23');
 Color backgroundlight = Hexcolor('#39392F');
 Color white = Hexcolor('#FAF6DD');
 Color textGrey = Hexcolor('#828374');
+Color barValue = Hexcolor('#4E4B42');
+Color barBG = Hexcolor('#24231F');
 
 
 BoxDecoration conStyle = BoxDecoration(

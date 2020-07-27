@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:assistant/screen/loginPage.dart';
 import 'package:assistant/screen/home.dart';
 import 'package:assistant/screen/tankopedi.dart';
+import 'package:assistant/screen/tankDetail.dart';
 // import 'package:assistant/screen/drawerMenu.dart';
 
 void main() => runApp(MyApp());
@@ -12,11 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WoTAssistant',
-      initialRoute: '/tankopedi',
+      initialRoute: '/detay',
       routes: {
         '/': (context) => Home(),
         '/login': (context) => LoginScreenPage(),
         '/tankopedi': (context) => Tankopedi(),
+        '/detay': (context) => TankDetail(),
+
       },
     );
   }

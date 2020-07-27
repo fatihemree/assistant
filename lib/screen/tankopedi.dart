@@ -70,25 +70,4 @@ class Tankopedi extends StatelessWidget {
         shrinkWrap: true,
       );
 
-  Widget gridView(context) => GridView.count(
-        padding: const EdgeInsets.all(15),
-        childAspectRatio: 1,
-        crossAxisCount: 2,
-        crossAxisSpacing: 5,
-        mainAxisSpacing: 5,
-        children: [
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-          TankopediCard(),
-        ],
-      );
 }
